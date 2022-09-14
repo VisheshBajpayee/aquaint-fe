@@ -1,6 +1,7 @@
 import React from "react";
 import Input from "../../../components/Input/Input";
 import Button from "../../../components/Button/Button";
+
 const StageTwoRegistration = () => {
   return (
     <>
@@ -88,7 +89,9 @@ const StageTwoRegistration = () => {
           </div>
           <span>
             I agree to{" "}
-            <span className="text-primaryOrange">privacy policy & terms</span>
+            <span className="text-primaryOrange cursor-pointer">
+              privacy policy & terms
+            </span>
           </span>
         </div>
       </div>
@@ -100,6 +103,12 @@ const StageTwoRegistration = () => {
           {" "}
           <Button btnText="Next" btnType="button" showArrow />
         </div>
+      </div>
+      <div className="flex gap-5 w-full justify-center mt-5">
+        <span>
+          Dont have an account?{" "}
+          <span className="text-primaryOrange cursor-pointer">Register</span>
+        </span>
       </div>
     </>
   );

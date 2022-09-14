@@ -5,7 +5,7 @@ import Input from "../../../components/Input/Input";
 const StageOneRegistration = () => {
   return (
     // stage one
-    <div>
+    <div className="w-3/4">
       {/* input component */}
       <Input type="text" name="email" id="email" label="Email" required />
 
