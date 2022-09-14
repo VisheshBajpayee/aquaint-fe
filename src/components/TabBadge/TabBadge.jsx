@@ -1,6 +1,6 @@
 import React from "react";
 
-const TabBadge = ({ primaryText, secondaryrText, icon, isActive }) => {
+const TabBadge = ({ primaryText, secondaryText, icon, isActive }) => {
   return (
     <div className="flex gap-3 items-center">
       {/* image */}
@@ -9,12 +9,7 @@ const TabBadge = ({ primaryText, secondaryrText, icon, isActive }) => {
           isActive ? "bg-primaryOrange" : "bg-badgeGrey"
         } rounded-md w-10 h-10 flex justify-center items-center`}
       >
-        {/* icon */}
-        <div
-          className={`${isActive ? "text-primaryWhite" : "text-secondaryGrey"}`}
-        >
-          {icon}
-        </div>
+        {icon}
       </div>
       {/* text */}
       <div className="flex  flex-col">
@@ -25,7 +20,7 @@ const TabBadge = ({ primaryText, secondaryrText, icon, isActive }) => {
         >
           {primaryText}
         </h3>
-        <span className="text-xs text-secondaryGrey">{secondaryrText}</span>
+        <span className="text-xs text-secondaryGrey">{secondaryText}</span>
       </div>
     </div>
   );

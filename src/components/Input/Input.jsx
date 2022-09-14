@@ -8,7 +8,7 @@ const Input = ({ type, name, id, placeholder, label, required }) => {
         {required && <span className="text-primaryOrange">*</span>}
       </label>
       <input
-        className=" border-2 border-borderGrey w-3/4 py-3 px-4 rounded-[10px]"
+        className=" border-2 border-borderGrey  py-3 px-4 rounded-[10px]"
         type={type}
         name={name}
         id={id}

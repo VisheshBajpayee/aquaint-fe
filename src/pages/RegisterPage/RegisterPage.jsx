@@ -6,11 +6,50 @@ import { ReactComponent as OrganizationIcon } from "../../assets/svg/organizatio
 import { ReactComponent as MailIcon } from "../../assets/svg/mail.svg";
 import { BiMessageCheck } from "react-icons/bi";
 import TabBadge from "../../components/TabBadge/TabBadge";
-import Button from "../../components/Button/Button";
-import Input from "../../components/Input/Input";
+import RegisterForm from "./RegisterForm";
+import StageOneRegistration from "./formComponents/StageOneRegistration";
+import StageTwoRegistration from "./formComponents/StageTwoRegistration";
+import StageThreeRegistration from "./formComponents/StageThreeRegistration";
 
 const RegisterPage = () => {
-  const [formState, setFormState] = useState([1, 0, 0]);
+  const [currentStage, setCurrentStage] = useState(1);
+
+  const renderFormStage = () => {
+    switch (currentStage) {
+      case 0:
+        return (
+          <RegisterForm
+            mainHeading="Welcome to Aquaint"
+            secondaryHeading="Enter your email address"
+          >
+            <StageOneRegistration />
+          </RegisterForm>
+        );
+
+      case 1:
+        return (
+          <RegisterForm
+            mainHeading="Personal Information"
+            secondaryHeading="We've sent a 4 digit code to vishesh@gmail.com"
+          >
+            <StageTwoRegistration />
+          </RegisterForm>
+        );
+
+      case 2:
+        return (
+          <RegisterForm
+            mainHeading="Create Organization"
+            secondaryHeading="We've sent a 4 digit code to vishesh@gmail.com"
+          >
+            <StageThreeRegistration />
+          </RegisterForm>
+        );
+      default:
+        return;
+    }
+  };
+
   return (
     <div className="w-screen h-screen  flex">
       {/* left */}
@@ -34,13 +73,14 @@ const RegisterPage = () => {
               primaryText="Email Address"
               secondaryrText="Organisation Email"
               icon={<MailIcon />}
-              isActive
+              isActive={currentStage === 0 ? true : false}
             />
             <ArrowIconBlack />
             <TabBadge
               primaryText="Personal"
               secondaryrText="Enter Information"
               icon={<AccountIcon />}
+              isActive={currentStage === 1 ? true : false}
             />
             <ArrowIconBlack />
 
@@ -48,33 +88,14 @@ const RegisterPage = () => {
               primaryText="Organisation"
               secondaryrText="Create Organisation"
               icon={<OrganizationIcon />}
+              isActive={currentStage === 2 ? true : false}
             />
           </div>
           <hr className=" my-1 ml-14" />
 
           <div className="ml-14 mt-10">
-            <div className="flex flex-col gap-1">
-              <h1 className="text-2xl font-semibold">Welcome to Aquaint</h1>
-              <span className="text-secondaryGrey">
-                Enter your email address
-              </span>
-              {/* first form stage */}
-              <div>
-                {/* input component */}
-                <Input
-                  type="text"
-                  name="email"
-                  id="email"
-                  label="Email"
-                  required
-                />
-
-                {/* button component */}
-                <div className="flex justify-end w-3/4 py-4">
-                  <Button btnText="Next" showArrow />
-                </div>
-              </div>
-            </div>
+            {/* stages of form */}
+            {renderFormStage()}
           </div>
         </section>
       </aside>
