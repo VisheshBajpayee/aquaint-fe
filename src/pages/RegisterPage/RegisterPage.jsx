@@ -1,14 +1,16 @@
-import React from "react";
-import { ReactComponent as RegisterSVG } from "../assets/svg/vector_1.svg";
-import { ReactComponent as ArrowIconBlack } from "../assets/svg/arrowIconBlack.svg";
-import { ReactComponent as AccountIcon } from "../assets/svg/account.svg";
-import { ReactComponent as OrganizationIcon } from "../assets/svg/organization.svg";
-import { ReactComponent as MailIcon } from "../assets/svg/mail.svg";
+import React, { useState } from "react";
+import { ReactComponent as RegisterSVG } from "../../assets/svg/vector_1.svg";
+import { ReactComponent as ArrowIconBlack } from "../../assets/svg/arrowIconBlack.svg";
+import { ReactComponent as AccountIcon } from "../../assets/svg/account.svg";
+import { ReactComponent as OrganizationIcon } from "../../assets/svg/organization.svg";
+import { ReactComponent as MailIcon } from "../../assets/svg/mail.svg";
 import { BiMessageCheck } from "react-icons/bi";
-import TabBadge from "../components/TabBadge/TabBadge";
-import Button from "../components/Button/Button";
+import TabBadge from "../../components/TabBadge/TabBadge";
+import Button from "../../components/Button/Button";
+import Input from "../../components/Input/Input";
 
 const RegisterPage = () => {
+  const [formState, setFormState] = useState([1, 0, 0]);
   return (
     <div className="w-screen h-screen  flex">
       {/* left */}
@@ -56,23 +58,17 @@ const RegisterPage = () => {
               <span className="text-secondaryGrey">
                 Enter your email address
               </span>
-
+              {/* first form stage */}
               <div>
                 {/* input component */}
-                <div className="form-control flex flex-col py-4 gap-2">
-                  <label
-                    className="text-inputLabelGrey text-[14px]"
-                    htmlFor="email"
-                  >
-                    Email
-                  </label>
-                  <input
-                    className=" border-2 border-borderGrey w-3/4 py-3 px-4 rounded-[10px]"
-                    type="email"
-                    name="email"
-                    id="email"
-                  />
-                </div>
+                <Input
+                  type="text"
+                  name="email"
+                  id="email"
+                  label="Email"
+                  required
+                />
+
                 {/* button component */}
                 <div className="flex justify-end w-3/4 py-4">
                   <Button btnText="Next" showArrow />
