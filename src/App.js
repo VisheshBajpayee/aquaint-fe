@@ -1,9 +1,17 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import routes from "./routes/routes";
 
 const App = () => {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <div className="font-montserrat">
+      <BrowserRouter>
+        <Routes>
+          {routes.map(({ key, path, Element }) => (
+            <Route key={key} path={path} element={<Element />} />
+          ))}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
