@@ -2,7 +2,7 @@ import React from "react";
 
 const Input = ({ type, name, id, placeholder, label, required }) => {
   return (
-    <div className="form-control flex flex-col py-4 gap-2">
+    <div className="form-control flex flex-col py-1 gap-2">
       <label className="text-inputLabelGrey text-[14px]" htmlFor={id}>
         {label}
         {required && <span className="text-primaryOrange">*</span>}

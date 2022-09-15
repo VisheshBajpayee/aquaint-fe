@@ -5,7 +5,7 @@ import Button from "../../../components/Button/Button";
 const StageTwoRegistration = () => {
   return (
     <>
-      <div className="flex gap-5 w-full">
+      <div className="flex gap-5 w-full mt-5">
         <div className="w-1/2">
           <Input
             id="firstname"
@@ -95,7 +95,7 @@ const StageTwoRegistration = () => {
           </span>
         </div>
       </div>
-      <div className="flex justify-between gap-5 w-full">
+      <div className="flex justify-between gap-5 w-full mt-2">
         <div>
           <Button
             btnText="Previous"

@@ -12,7 +12,7 @@ import StageTwoRegistration from "./formComponents/StageTwoRegistration";
 import StageThreeRegistration from "./formComponents/StageThreeRegistration";
 
 const RegisterPage = () => {
-  const [currentStage, setCurrentStage] = useState(1);
+  const [currentStage, setCurrentStage] = useState(2);
 
   const renderFormStage = () => {
     switch (currentStage) {
@@ -93,7 +93,7 @@ const RegisterPage = () => {
           </div>
           <hr className=" my-1 ml-14" />
 
-          <div className="ml-14 mt-10">
+          <div className="ml-14 mt-5">
             {/* stages of form */}
             {renderFormStage()}
           </div>

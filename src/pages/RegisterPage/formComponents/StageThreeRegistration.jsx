@@ -20,8 +20,14 @@ const StageThreeRegistration = () => {
         required
       />
       <div className="flex justify-between mt-6">
-        <Button btnText="Previous" showArrow />
-        <Button btnText="Create" />
+        <Button btnText="Previous" variant="outline" arrowLeft />
+        <Button btnText="Create" variant="success" />
+      </div>
+      <div className="flex gap-5 w-full justify-center mt-5">
+        <span>
+          Dont have an account?{" "}
+          <span className="text-primaryOrange cursor-pointer">Register</span>
+        </span>
       </div>
     </div>
   );
