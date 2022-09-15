@@ -12,7 +12,7 @@ import StageTwoRegistration from "./formComponents/StageTwoRegistration";
 import StageThreeRegistration from "./formComponents/StageThreeRegistration";
 
 const RegisterPage = () => {
-  const [currentStage, setCurrentStage] = useState(2);
+  const [currentStage, setCurrentStage] = useState(1);
 
   const renderFormStage = () => {
     switch (currentStage) {

@@ -97,11 +97,16 @@ const StageTwoRegistration = () => {
       </div>
       <div className="flex justify-between gap-5 w-full">
         <div>
-          <Button btnText="Previous" btnType="button" showArrow />
+          <Button
+            btnText="Previous"
+            btnType="button"
+            arrowLeft
+            variant="outline"
+          />
         </div>
         <div>
           {" "}
-          <Button btnText="Next" btnType="button" showArrow />
+          <Button btnText="Next" btnType="button" showArrow arrowRight />
         </div>
       </div>
       <div className="flex gap-5 w-full justify-center mt-5">
