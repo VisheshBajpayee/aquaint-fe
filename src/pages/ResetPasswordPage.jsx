@@ -2,12 +2,17 @@ import React from "react";
 import Button from "../components/Button/Button";
 import Input from "../components/Input/Input";
 import { IoIosArrowBack } from "react-icons/io";
+import { BiMessageCheck } from "react-icons/bi";
 import { ReactComponent as ResetPasswordVector } from "../assets/svg/resetPasswordVector.svg";
 const ResetPasswordPage = () => {
   return (
     <div className="w-screen h-screen flex">
       {/* left */}
       <div className="w-[60vw] bg-primaryGrey h-screen flex items-center justify-center">
+        <div className="flex items-center  gap-1 fixed top-10 left-10">
+          <BiMessageCheck size={22} className="mt-2 text-primaryOrange " />
+          <h1 className="font-bold text-2xl text-primaryBlue">aquaint</h1>
+        </div>
         <ResetPasswordVector />
       </div>
       {/* right */}
@@ -32,7 +37,7 @@ const ResetPasswordPage = () => {
             <Button btnText="Get Reset Link" fullWidth />
           </div>
 
-          <div className="flex gap-2 w-full justify-center items-center mt-6">
+          <div className="flex gap-2 w-full justify-center items-center mt-6 cursor-pointer">
             <IoIosArrowBack />
             <span>Back to login</span>
           </div>
