@@ -1,7 +1,6 @@
 import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-// btnType used to specify type of button
 const Button = ({
   btnType,
   btnText,

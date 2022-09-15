@@ -4,6 +4,7 @@ import Input from "../components/Input/Input";
 import { AiOutlineEye } from "react-icons/ai";
 import Checkbox from "../components/Checkbox/Checkbox";
 import Button from "../components/Button/Button";
+
 const LoginPage = () => {
   return (
     <div className="w-screen h-screen flex">
@@ -40,11 +41,18 @@ const LoginPage = () => {
             <Checkbox name="remember-me" id="remember-me" label="Remember me" />
             <span className="cursor-pointer">Forgot password?</span>
           </div>
-          <div className="mt-8">
+          <div className="mt-5">
             <Button btnText="Login" fullWidth />
           </div>
 
-          <div></div>
+          <div className="flex gap-5 w-full justify-center mt-5">
+            <span>
+              Dont have an account?{" "}
+              <span className="text-primaryOrange cursor-pointer">
+                Register
+              </span>
+            </span>
+          </div>
         </div>
       </div>
     </div>
