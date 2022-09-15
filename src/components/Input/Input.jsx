@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { RegisterUserContext } from "../../context/RegisterUserContext";
 
 const Input = ({
   type,
@@ -10,8 +11,9 @@ const Input = ({
   inputIcon,
   labelTooltip,
   tooltipText,
-  tooltipIcon
+  tooltipIcon,
 }) => {
+  const { handleChange } = useContext(RegisterUserContext);
   return (
     <div className="form-control flex flex-col py-1 gap-2 relative">
       <label
@@ -29,6 +31,7 @@ const Input = ({
         ) : null}
       </label>
       <input
+        onChange={(e) => handleChange(e)}
         className={`${
           type === "checkbox"
             ? "checkbox checkbox-info"

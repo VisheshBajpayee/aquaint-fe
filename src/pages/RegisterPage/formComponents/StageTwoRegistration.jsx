@@ -1,12 +1,11 @@
-import React from "react";
 import Input from "../../../components/Input/Input";
 import Button from "../../../components/Button/Button";
 import { AiOutlineEye } from "react-icons/ai";
-import { useDispatch } from "react-redux";
-import { changeFormStage } from "../../../redux/features/registerFormFeature";
 import { motion } from "framer-motion";
+import { useContext } from "react";
+import { RegisterUserContext } from "../../../context/RegisterUserContext";
 const StageTwoRegistration = () => {
-  const dispatch = useDispatch();
+  const { toggleFormState } = useContext(RegisterUserContext);
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <div className="flex gap-5 w-full mt-5">
@@ -119,9 +118,7 @@ const StageTwoRegistration = () => {
             arrowLeft
             variant="outline"
             onClick={(e) => {
-              e.preventDefault();
-              console.log("Clicked on previous");
-              dispatch(changeFormStage(0));
+              toggleFormState(0, e);
             }}
           />
         </div>
@@ -133,9 +130,7 @@ const StageTwoRegistration = () => {
             showArrow
             arrowRight
             onClick={(e) => {
-              e.preventDefault();
-              console.log("Clicked on next");
-              dispatch(changeFormStage(2));
+              toggleFormState(2, e);
             }}
           />
         </div>

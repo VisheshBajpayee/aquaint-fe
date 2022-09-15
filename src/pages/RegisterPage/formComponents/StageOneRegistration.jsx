@@ -1,11 +1,15 @@
 import { motion } from "framer-motion";
-import React from "react";
+import { useContext } from "react";
 import { useDispatch } from "react-redux";
 import Button from "../../../components/Button/Button";
 import Input from "../../../components/Input/Input";
+import { RegisterUserContext } from "../../../context/RegisterUserContext";
 import { changeFormStage } from "../../../redux/features/registerFormFeature";
 // stage one form for regiter page
 const StageOneRegistration = () => {
+  const { val, handleChange, toggleFormState } =
+    useContext(RegisterUserContext);
+  console.log(val);
   const dispatch = useDispatch();
   return (
     // stage one
@@ -15,15 +19,20 @@ const StageOneRegistration = () => {
       className="w-3/4"
     >
       {/* input component */}
-      <Input type="text" name="email" id="email" label="Email" required />
+      <Input
+        changeHandler={handleChange}
+        type="text"
+        name="email"
+        id="email"
+        label="Email"
+        required
+      />
 
       {/* button component */}
       <div className="flex justify-end  py-4">
         <Button
           onClick={(e) => {
-            e.preventDefault();
-            console.log("Clicked on next");
-            dispatch(changeFormStage(1));
+            toggleFormState(1, e);
           }}
           btnText="Next"
           arrowRight

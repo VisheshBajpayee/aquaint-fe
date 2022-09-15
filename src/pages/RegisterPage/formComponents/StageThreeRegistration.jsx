@@ -1,13 +1,11 @@
-import React from "react";
 import Button from "../../../components/Button/Button";
 import Input from "../../../components/Input/Input";
 import { GrCircleInformation } from "react-icons/gr";
-import { changeFormStage } from "../../../redux/features/registerFormFeature";
-import { useDispatch } from "react-redux";
 import { motion } from "framer-motion";
-
+import { RegisterUserContext } from "../../../context/RegisterUserContext";
+import { useContext } from "react";
 const StageThreeRegistration = () => {
-  const dispatch = useDispatch();
+  const { toggleFormState } = useContext(RegisterUserContext);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -37,9 +35,7 @@ const StageThreeRegistration = () => {
           variant="outline"
           arrowLeft
           onClick={(e) => {
-            e.preventDefault();
-            console.log("Clicked on previous");
-            dispatch(changeFormStage(1));
+            toggleFormState(1, e);
           }}
         />
         <Button btnText="Create" variant="success" />
