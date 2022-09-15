@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "../../../components/Input/Input";
 import Button from "../../../components/Button/Button";
-
+import { AiOutlineEye } from "react-icons/ai";
 const StageTwoRegistration = () => {
   return (
     <>
@@ -71,6 +71,12 @@ const StageTwoRegistration = () => {
             label="Nick name"
             placeholder="enter your nick name"
             required
+            inputIcon={
+              <AiOutlineEye
+                className="absolute right-5 top-12 text-secondaryGrey cursor-pointer"
+                size={20}
+              />
+            }
           />
         </div>
         <div className="w-1/2">
@@ -79,6 +85,12 @@ const StageTwoRegistration = () => {
             name="firstName"
             placeholder="enter your first name"
             required
+            inputIcon={
+              <AiOutlineEye
+                className="absolute right-5 top-12 text-secondaryGrey cursor-pointer"
+                size={20}
+              />
+            }
           />
         </div>
       </div>

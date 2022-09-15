@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../../../components/Button/Button";
 import Input from "../../../components/Input/Input";
-
+import {GrCircleInformation} from "react-icons/gr"
 const StageThreeRegistration = () => {
   return (
     <div className=" w-3/4 ">
@@ -18,6 +18,10 @@ const StageThreeRegistration = () => {
         label="Sub Domain Name"
         placeholder="Enter Subdomain name"
         required
+        labelTooltip
+        tooltipText="organisation sub domain details"
+        tooltipIcon = {<GrCircleInformation/>}
+
       />
       <div className="flex justify-between mt-6">
         <Button btnText="Previous" variant="outline" arrowLeft />
