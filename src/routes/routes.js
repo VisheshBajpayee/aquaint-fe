@@ -4,6 +4,7 @@ import LoginPage from "../pages/LoginPage";
 import ForgotPasswordPage from "../pages/ForgotPasswordPage";
 import ResetPasswordPage from "../pages/ResetPasswordPage";
 import Dashboard from "../pages/Dashboard";
+import { PrivateRoute } from "./privateRoutes";
 
 const routes = [
   {
@@ -30,6 +31,12 @@ const routes = [
     key: PATHS.dashboard,
     path: PATHS.dashboard,
     Element: Dashboard,
+  },
+  // redirect from / to /register on initial page load
+  {
+    key: PATHS.home,
+    path: PATHS.home,
+    Element: PrivateRoute,
   },
 ];
 

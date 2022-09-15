@@ -4,4 +4,5 @@ export const PATHS = {
   forgotPassword: "/forgot-password",
   resetPassword: "/reset-password",
   dashboard: "/dashboard",
+  home: "/",
 };
