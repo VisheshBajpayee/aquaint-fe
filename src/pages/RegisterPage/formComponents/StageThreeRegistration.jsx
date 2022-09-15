@@ -4,10 +4,16 @@ import Input from "../../../components/Input/Input";
 import { GrCircleInformation } from "react-icons/gr";
 import { changeFormStage } from "../../../redux/features/registerFormFeature";
 import { useDispatch } from "react-redux";
+import { motion } from "framer-motion";
+
 const StageThreeRegistration = () => {
   const dispatch = useDispatch();
   return (
-    <div className=" w-3/4 ">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className=" w-3/4 "
+    >
       <Input
         id="organization-name"
         name="organization"
@@ -44,7 +50,7 @@ const StageThreeRegistration = () => {
           <span className="text-primaryOrange cursor-pointer">Register</span>
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

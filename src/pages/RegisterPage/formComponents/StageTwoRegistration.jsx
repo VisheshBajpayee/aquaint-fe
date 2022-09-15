@@ -4,11 +4,11 @@ import Button from "../../../components/Button/Button";
 import { AiOutlineEye } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { changeFormStage } from "../../../redux/features/registerFormFeature";
+import { motion } from "framer-motion";
 const StageTwoRegistration = () => {
   const dispatch = useDispatch();
-
   return (
-    <>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <div className="flex gap-5 w-full mt-5">
         <div className="w-1/2">
           <Input
@@ -146,7 +146,7 @@ const StageTwoRegistration = () => {
           <span className="text-primaryOrange cursor-pointer">Register</span>
         </span>
       </div>
-    </>
+    </motion.div>
   );
 };
 

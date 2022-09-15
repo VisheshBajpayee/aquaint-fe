@@ -1,14 +1,19 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { useDispatch } from "react-redux";
 import Button from "../../../components/Button/Button";
 import Input from "../../../components/Input/Input";
 import { changeFormStage } from "../../../redux/features/registerFormFeature";
-
+// stage one form for regiter page
 const StageOneRegistration = () => {
   const dispatch = useDispatch();
   return (
     // stage one
-    <div className="w-3/4">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="w-3/4"
+    >
       {/* input component */}
       <Input type="text" name="email" id="email" label="Email" required />
 
@@ -30,7 +35,7 @@ const StageOneRegistration = () => {
           Register
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
