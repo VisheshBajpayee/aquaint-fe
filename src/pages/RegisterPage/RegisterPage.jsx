@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ReactComponent as RegisterSVG } from "../../assets/svg/vector_1.svg";
 import { ReactComponent as ArrowIconBlack } from "../../assets/svg/arrowIconBlack.svg";
 import { ReactComponent as AccountIcon } from "../../assets/svg/account.svg";
@@ -10,12 +10,14 @@ import RegisterForm from "./RegisterForm";
 import StageOneRegistration from "./formComponents/StageOneRegistration";
 import StageTwoRegistration from "./formComponents/StageTwoRegistration";
 import StageThreeRegistration from "./formComponents/StageThreeRegistration";
+import { useSelector } from "react-redux";
 
 const RegisterPage = () => {
-  const [currentStage, setCurrentStage] = useState(1);
+  const currentFormState = useSelector((state) => state.registerFormState);
+  console.log(currentFormState);
 
   const renderFormStage = () => {
-    switch (currentStage) {
+    switch (currentFormState) {
       case 0:
         return (
           <RegisterForm
@@ -57,7 +59,7 @@ const RegisterPage = () => {
         <div className="p-10 ">
           <div className="flex items-center  gap-1">
             <BiMessageCheck size={22} className="mt-2 text-primaryOrange " />
-            <h1 className="font-bold text-2xl">aquaint</h1>
+            <h1 className="font-bold text-2xl text-primaryBlue">aquaint</h1>
           </div>
         </div>
         <div className="flex flex-col items-center justify-center flex-1 ">
@@ -73,14 +75,14 @@ const RegisterPage = () => {
               primaryText="Email Address"
               secondaryrText="Organisation Email"
               icon={<MailIcon />}
-              isActive={currentStage === 0 ? true : false}
+              isActive={currentFormState === 0 ? true : false}
             />
             <ArrowIconBlack />
             <TabBadge
               primaryText="Personal"
               secondaryrText="Enter Information"
               icon={<AccountIcon />}
-              isActive={currentStage === 1 ? true : false}
+              isActive={currentFormState === 1 ? true : false}
             />
             <ArrowIconBlack />
 
@@ -88,7 +90,7 @@ const RegisterPage = () => {
               primaryText="Organisation"
               secondaryrText="Create Organisation"
               icon={<OrganizationIcon />}
-              isActive={currentStage === 2 ? true : false}
+              isActive={currentFormState === 2 ? true : false}
             />
           </div>
           <hr className=" my-1 ml-14" />

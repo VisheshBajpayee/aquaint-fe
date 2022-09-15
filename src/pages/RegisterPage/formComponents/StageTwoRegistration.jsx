@@ -2,7 +2,11 @@ import React from "react";
 import Input from "../../../components/Input/Input";
 import Button from "../../../components/Button/Button";
 import { AiOutlineEye } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { changeFormStage } from "../../../redux/features/registerFormFeature";
 const StageTwoRegistration = () => {
+  const dispatch = useDispatch();
+
   return (
     <>
       <div className="flex gap-5 w-full mt-5">
@@ -114,11 +118,26 @@ const StageTwoRegistration = () => {
             btnType="button"
             arrowLeft
             variant="outline"
+            onClick={(e) => {
+              e.preventDefault();
+              console.log("Clicked on previous");
+              dispatch(changeFormStage(0));
+            }}
           />
         </div>
         <div>
           {" "}
-          <Button btnText="Next" btnType="button" showArrow arrowRight />
+          <Button
+            btnText="Next"
+            btnType="button"
+            showArrow
+            arrowRight
+            onClick={(e) => {
+              e.preventDefault();
+              console.log("Clicked on next");
+              dispatch(changeFormStage(2));
+            }}
+          />
         </div>
       </div>
       <div className="flex gap-5 w-full justify-center mt-5">

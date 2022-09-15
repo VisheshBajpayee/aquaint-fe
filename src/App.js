@@ -1,23 +1,21 @@
 import React, { useEffect } from "react";
+import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { PATHS } from "./paths/paths";
-import { PrivateRoute } from "./routes/privateRoutes";
 import routes from "./routes/routes";
+import store from "./store";
 
 const App = () => {
-  useEffect(() => {
-    <Navigate from="/" to="/register" />;
-  }, []);
-
   return (
     <div className="font-montserrat">
-      <BrowserRouter>
-        <Routes>
-          {routes.map(({ key, path, Element }) => (
-            <Route key={key} path={path} element={<Element />} />
-          ))}
-        </Routes>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            {routes.map(({ key, path, Element }) => (
+              <Route key={key} path={path} element={<Element />} />
+            ))}
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </div>
   );
 };

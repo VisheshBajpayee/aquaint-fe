@@ -8,6 +8,7 @@ const Button = ({
   arrowLeft,
   variant,
   fullWidth,
+  onClick,
 }) => {
   const variantClasses = () => {
     switch (variant) {
@@ -24,6 +25,7 @@ const Button = ({
 
   return (
     <button
+      onClick={onClick}
       type={btnType}
       className={`rounded-[5px]  px-6 py-3 text-center ${
         fullWidth && "w-full"
