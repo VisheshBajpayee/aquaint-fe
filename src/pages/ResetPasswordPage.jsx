@@ -4,6 +4,8 @@ import Input from "../components/Input/Input";
 import { IoIosArrowBack } from "react-icons/io";
 import { BiMessageCheck } from "react-icons/bi";
 import { ReactComponent as ResetPasswordVector } from "../assets/svg/resetPasswordVector.svg";
+import { Link } from "react-router-dom";
+import { PATHS } from "../paths/paths";
 const ResetPasswordPage = () => {
   return (
     <div className="w-screen h-screen flex">
@@ -39,7 +41,7 @@ const ResetPasswordPage = () => {
 
           <div className="flex gap-2 w-full justify-center items-center mt-6 cursor-pointer">
             <IoIosArrowBack />
-            <span>Back to login</span>
+            <Link to={PATHS.loginPage}>Back to login</Link>
           </div>
         </div>
       </div>

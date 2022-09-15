@@ -4,12 +4,19 @@ import Input from "../components/Input/Input";
 import { AiOutlineEye } from "react-icons/ai";
 import Checkbox from "../components/Checkbox/Checkbox";
 import Button from "../components/Button/Button";
+import { Link } from "react-router-dom";
+import { PATHS } from "../paths/paths";
+import { BiMessageCheck } from "react-icons/bi";
 
 const LoginPage = () => {
   return (
     <div className="w-screen h-screen flex">
       {/* left */}
       <div className="w-[60vw] bg-primaryGrey h-screen flex items-center justify-center">
+        <div className="flex items-center  gap-1 fixed top-10 left-10">
+          <BiMessageCheck size={22} className="mt-2 text-primaryOrange " />
+          <h1 className="font-bold text-2xl text-primaryBlue">aquaint</h1>
+        </div>
         <LoginVector />
       </div>
       {/* right */}
@@ -39,7 +46,9 @@ const LoginPage = () => {
 
           <div className="mt-5 flex justify-between">
             <Checkbox name="remember-me" id="remember-me" label="Remember me" />
-            <span className="cursor-pointer">Forgot password?</span>
+            <Link to={PATHS.forgotPassword} className="cursor-pointer">
+              Forgot password?
+            </Link>
           </div>
           <div className="mt-5">
             <Button btnText="Login" fullWidth />
@@ -48,9 +57,12 @@ const LoginPage = () => {
           <div className="flex gap-5 w-full justify-center mt-5">
             <span>
               Dont have an account?{" "}
-              <span className="text-primaryOrange cursor-pointer">
+              <Link
+                to={PATHS.registerPage}
+                className="text-primaryOrange cursor-pointer"
+              >
                 Register
-              </span>
+              </Link>
             </span>
           </div>
         </div>
